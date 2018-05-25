@@ -71,8 +71,7 @@
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	.input-new-tag {
-		display: inline-block;
+	.home-page .input-new-tag {
 		width: 90px;
 		margin-left: 10px;
 		vertical-align: bottom;
