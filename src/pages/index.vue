@@ -19,7 +19,6 @@
 				</el-tag>
 				<el-input
 					class="input-new-tag"
-					v-if="inputVisible"
 					v-model="inputValue"
 					ref="saveTagInput"
 					size="small"
@@ -27,7 +26,7 @@
 					@blur="handleInputConfirm"
 				>
 				</el-input>
-				<el-button v-else class="button-new-tag" size="small" @click="showInput" type="primary" plain>添加任务</el-button>
+				<!-- <el-button v-else class="button-new-tag" size="small" @click="showInput" type="primary" plain>添加任务</el-button> -->
 			</div>
 			<div class="content__select">
 				<div class="content__select-title">选填先行任务</div>
