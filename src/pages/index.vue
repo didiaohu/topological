@@ -72,6 +72,7 @@
 		padding-bottom: 0;
 	}
 	.input-new-tag {
+		display: inline-block;
 		width: 90px;
 		margin-left: 10px;
 		vertical-align: bottom;
