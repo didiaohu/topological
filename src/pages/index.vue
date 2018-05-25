@@ -57,7 +57,14 @@
 				</div>
 			</div>
 		</div>
-		
+		<div class="showVedio" @click="isShowVedio = !isShowVedio"></div>
+		<div class="vedio" v-if="isShowVedio">
+			<div class="video-wrap">
+				<video controls="controls" src=""></video>
+			</div>
+			<div class="vedio-mask"></div>
+			<div class="video-close" @click="isShowVedio = !isShowVedio"></div>
+		</div>
 	</div>
 </template>
 <style>
@@ -142,6 +149,63 @@
 		padding-left: 10px;
 		padding-top: 10px;
 	}
+	.showVedio{
+		width: 76px;
+		height: 76px;
+		background: url(./vedio.png);
+		position: fixed;
+		right: 0;
+		top: 422px;
+	}
+	.vedio{
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 9999;
+	}
+	.vedio-mask{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: #000;
+		opacity: 0.8;
+		z-index: 10000;
+	}
+	.video-close {
+	    position: absolute;
+	    background: url(./close.png);
+	    background-size: 100%;
+	    width: 25px;
+	    height: 25px;
+	    right: 40px;
+	    top: 40px;
+	    z-index: 10001;
+	    cursor: pointer;
+	}
+	.video-wrap{
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-top: -245px;
+	    margin-left: -400px;
+	    width: 800px;
+	    height: 490px;
+	    z-index: 10001;
+	}
+	.video-wrap video{
+		height: 450px;
+		width: 100%;
+		position: absolute;
+		right: 0px;
+		left: 0px;
+		top: 0px;
+		bottom: 0px;
+		background: transparent;
+	} 
 </style>
 <script>
 	import graph,{DFS} from './topological.js';
@@ -154,7 +218,8 @@
 				checkedCities:[],
 				cities:[],
 				showSort: '',
-				showResult: false
+				showResult: false,
+				isShowVedio: false
 			}
 		},
 		mounted(){
@@ -245,7 +310,9 @@
 				graph.initEdge(obj.edges);
 				this.showSort = DFS(graph);
 				this.showSort.reverse();
-			}
+			},
+
+
 		}
 	}
 </script>
