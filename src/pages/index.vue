@@ -60,7 +60,7 @@
 		<div class="showVedio" @click="isShowVedio = !isShowVedio"></div>
 		<div class="vedio" v-if="isShowVedio">
 			<div class="video-wrap">
-				<video controls="controls" src=""></video>
+				<video controls="controls" src="https://didiaohu.github.io/topological/1.mp4"></video>
 			</div>
 			<div class="vedio-mask"></div>
 			<div class="video-close" @click="isShowVedio = !isShowVedio"></div>
